@@ -1,1 +1,3 @@
-{{ h.link_to(data[field.field_name], rel=field.display_property, target='_blank') }}
+{% for link in data[field.field_name].split() %}
+{{ h.link_to(link, url=link, rel=field.display_property, target='_blank') }}<br/>
+{% endfor %}
